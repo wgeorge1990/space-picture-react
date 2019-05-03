@@ -1,5 +1,8 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import './App.css'
+import { Segment, Header, Card, Image, Container} from 'semantic-ui-react'
+import ImageContainer from './ImageContainer'
+
 
 class App extends React.Component {
   state = {
@@ -23,10 +26,15 @@ class App extends React.Component {
   }
   componentDidMount() {
     this.fetchNasaImageForEachDayOfMonth()
+   
   }
   render() {
+    console.log(this.state.nasaImages.length)
     return(
-      <h1>SpacPictures</h1>
+      <div>
+        <Header  as='h1' >SpacePictures </Header>
+            {this.state.nasaImages.length === 20 ? <ImageContainer images={this.state.nasaImages}/> : null}
+      </div>
     ) 
   }
 }
