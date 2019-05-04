@@ -6,7 +6,7 @@ class ImageContainer extends React.Component {
     render() {
         console.log(this.props.images)
         return(
-                <Card.Group itemsPerRow={3}>
+                <Card.Group itemsPerRow={1}>
                         <ImageCards images={this.props.images}/>
                 </Card.Group>
         )

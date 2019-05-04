@@ -10,6 +10,7 @@ class ImageCards extends React.Component {
                         <Card.Header>
                             {image.date}
                         </Card.Header>
+                        <p>{image.explanation}</p>
                         <Image src={image.hdurl} />
                     </Card.Content>
                 </Card>) )
