@@ -9,9 +9,26 @@
       "service_version": "v1",
       "title": "The Aurora and the Sunrise",
       "url": "https://apod.nasa.gov/apod/image/1805/AuroraSunrise_ISS_960.jpg"
+    },
+    {
+      "date": "2018-05-02",
+      "explanation": "Have you ever seen a halo around the Moon?  This fairly common sight occurs when high thin clouds containing millions of tiny ice crystals cover much of the sky.  Each ice crystal acts like a miniature lens.  Because most of the crystals have a similar elongated hexagonal shape, light entering one crystal face and exiting through the opposing face refracts 22 degrees, which corresponds to the radius of the Moon Halo.  A similar Sun Halo may be visible during the day.  Exactly how ice-crystals form in clouds remains under investigation.  In the featured image, the ice circle in the sky is mirrored by a stone circle on the ground. Taken just over a month ago in Pontypridd Common, Wales, UK, the central Rocking Stone survives from the last ice age, while the surrounding stones in the circles were placed much more recently -- during the 1800s.    Follow APOD on: Facebook,  Google Plus,  Instagram, or Twitter",
+      "hdurl": "https://apod.nasa.gov/apod/image/1805/StoneHalo_Wallace_2048.jpg",
+      "media_type": "image",
+      "title": "Moon Halo over Stone Circle",
+      "url": "https://apod.nasa.gov/apod/image/1805/StoneHalo_Wallace_960.jpg",
+      "id": 2
+    },
+    {
+      "date": "2018-05-04",
+      "explanation": "Big, beautiful spiral galaxy M101 is one of the last entries in Charles Messier's famous catalog, but definitely not one of the least. About 170,000 light-years across, this galaxy is enormous, almost twice the size of our own Milky Way galaxy. M101 was also one of the original spiral nebulae observed by Lord Rosse's large 19th century telescope, the Leviathan of Parsontown. M101 shares this modern telescopic field of view with spiky foreground stars within the Milky Way and a companion dwarf galaxy NGC 5474 (lower right). The colors of the Milky Way stars can also be found in the starlight from the large island universe. Its core is dominated by light from cool yellowish stars. Along its grand design spiral arms are the blue colors of hotter, young stars mixed with obscuring dust lanes and pinkish star forming regions. Also known as the Pinwheel Galaxy, M101 lies within the boundaries of the northern constellation Ursa Major, about 23 million light-years away. NGC 5474 has likely been distorted by its past gravitational interactions with the dominant M101.",
+      "hdurl": "https://apod.nasa.gov/apod/image/1805/M101_3Days_New_APOD.jpg",
+      "media_type": "image",
+      "title": "The View Toward M101",
+      "url": "https://apod.nasa.gov/apod/image/1805/M101_3Days_New_APOD1024.jpg",
+      "id": 3
     }
   ],
-
   "posts": [
     {
       "id": 1,

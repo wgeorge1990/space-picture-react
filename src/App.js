@@ -7,7 +7,7 @@ import ImageContainer from './ImageContainer'
 class App extends React.Component {
   state = {
     nasaImages: [],
-    rowCount: 2
+    rowCount: 1
 
   }
         /////FIRST WAY
@@ -46,6 +46,10 @@ class App extends React.Component {
     this.fetchNasaImageTwoPointO()
   }
 
+//    saveImageToDbJson = () => {
+//     console.log("saveImageToDbJson():" )
+// }
+
   increaseTiles = () => {
     console.log('Increase tiles')
     this.setState({
@@ -67,16 +71,17 @@ class App extends React.Component {
   render() {
     return(
       <div>
-        <Button.Group>
+        
+        <Header  as='h1' textAlign="center">SpacePictures </Header>
+        <Button.Group fluid>
           {this.button("Increase tiles", this.increaseTiles)}
           <Button.Or />
           {this.button("Decrease Tiles", this.decreaseTiles)}
         </Button.Group>
-        <Header  as='h1' textAlign="center">SpacePictures </Header>
             {this.state.nasaImages.length === 28 ? 
             <ImageContainer 
                 images={this.state.nasaImages}
-                rowCount={this.state.rowCount}/> : null}
+                rowCount={this.state.rowCount} /> : null}
       </div>
     ) 
   }
