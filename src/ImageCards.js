@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Container, Image } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react'
 
 class ImageCards extends React.Component {
     render() {
