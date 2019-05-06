@@ -1,19 +1,23 @@
 import React from 'react'
 import { Card, Image } from 'semantic-ui-react'
 
-class ImageCards extends React.Component {
-    render() {
-        return(
-            this.props.images.map(image => 
-                <Card key={image.date}>
-                    <Card.Content>
-                        <Card.Header>
-                            {image.date}
-                        </Card.Header>
-                        <p>{image.explanation}</p>
-                        <Image src={image.hdurl} />
-                    </Card.Content>
-                </Card>) )
-    }
+const card = (image) => {
+    return (
+    <Card key={image.date}>
+        <Card.Content>
+            <Card.Header textAlign="center">
+                {image.title}
+            </Card.Header>
+            <p>{image.explanation}</p>
+            <Image src={image.hdurl} />
+        </Card.Content>
+    </Card> )
 }
+
+const ImageCards = (props) => {
+    console.log(props.images)
+    return(
+        props.images.map(image => card(image)) )
+}
+
 export default ImageCards

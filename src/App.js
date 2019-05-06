@@ -1,12 +1,14 @@
 import React from 'react'
 import './App.css'
-import { Segment, Header, Card, Image, Container} from 'semantic-ui-react'
+import {Header, Button} from 'semantic-ui-react'
 import ImageContainer from './ImageContainer'
 
 
 class App extends React.Component {
   state = {
-    nasaImages: []
+    nasaImages: [],
+    rowCount: 2
+
   }
         /////FIRST WAY
   fetchNasaImageForEachDayOfMonth() {
@@ -42,13 +44,39 @@ class App extends React.Component {
   componentDidMount() {
     //this.fetchNasaImageForEachDayOfMonth()
     this.fetchNasaImageTwoPointO()
-   
   }
+
+  increaseTiles = () => {
+    console.log('Increase tiles')
+    this.setState({
+      rowCount: this.state.rowCount + 1
+    })
+}
+
+  decreaseTiles = () => {
+    console.log('Decrease tiles')
+    if (this.state.rowCount >= 2) {
+      this.setState({
+        rowCount: this.state.rowCount -1
+      }) 
+    }
+  }
+
+  button = (text, funcCall) => ( <Button onClick={funcCall}>{text}</Button> )
+
   render() {
     return(
       <div>
-        <Header  as='h1' >SpacePictures </Header>
-            {this.state.nasaImages.length === 28 ? <ImageContainer images={this.state.nasaImages}/> : null}
+        <Button.Group>
+          {this.button("Increase tiles", this.increaseTiles)}
+          <Button.Or />
+          {this.button("Decrease Tiles", this.decreaseTiles)}
+        </Button.Group>
+        <Header  as='h1' textAlign="center">SpacePictures </Header>
+            {this.state.nasaImages.length === 28 ? 
+            <ImageContainer 
+                images={this.state.nasaImages}
+                rowCount={this.state.rowCount}/> : null}
       </div>
     ) 
   }
