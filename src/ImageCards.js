@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+
 import { Card, Image, Button } from 'semantic-ui-react'
 
 const saveImageToDbJson = (e, image) => {
@@ -21,38 +22,33 @@ const saveImageToDbJson = (e, image) => {
             .catch((err)=>console.log(err))
         }
 
-const showDescription = () => {
-    console.log('showDescription():')
-    this.setState({
-        descriptionToggle: !this.state.descriptionToggle
-    })
+const showDescription = (description, toggleDescription) => {
+   toggleDescription(!description)
 }
 
-const card = (image) => {
-    return (
-    <Card key={image.date}>
+const ImageCards = (props) => {
+    //hook sets description: false = state
+    const [description, toggleDescription] = useState(false)
+    console.log(description)
+    return(
+        props.images.map(image =>
+            <Card key={image.date}>
         <Card.Content>
             <Card.Header textAlign="center">
                 {image.title}
             </Card.Header>
-            {/* <p>{image.explanation}</p> */}
+            {description ? <p>{image.explanation}</p> : null}
             <Image src={image.hdurl} />
             <Button.Group>
             <Button  onClick={(e) => saveImageToDbJson(e, image)}>
                 Save Image
             </Button>
-            <Button  onClick={showDescription}>
+            <Button  onClick={() => showDescription(description, toggleDescription)}>
                 Show Description
             </Button>
             </Button.Group >
         </Card.Content >
-    </Card> )
-}
-
-
-const ImageCards = (props) => {
-    console.log(props.images)
-    return(
-        props.images.map(image => card(image)) )
+    </Card> ) 
+    )
 }
 export default ImageCards
