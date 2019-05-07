@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
-
-import { Card, Image, Button } from 'semantic-ui-react'
+import React, { useState, useEffect } from 'react'
+import { Card, Image, Button  } from 'semantic-ui-react'
 
 const saveImageToDbJson = (e, image) => {
     console.log("saveImageToDbJson():" )
@@ -23,32 +22,49 @@ const saveImageToDbJson = (e, image) => {
         }
 
 const showDescription = (description, toggleDescription) => {
-   toggleDescription(!description)
-}
+    toggleDescription(!description)
+ }
 
-const ImageCards = (props) => {
-    //hook sets description: false = state
-    const [description, toggleDescription] = useState(false)
-    console.log(description)
+const ImageCard = (props) => {
+  const [description, toggleDescription] = useState(false)
+
+  const [isSaved, saved] = useState(false)
+
+  const [message, changeMessage] = useState('')
+
+  const markAsSaved = (e) => {
+        console.log('inside mark as saved')
+        if(isSaved === false) {
+            saved(true)
+            saveImageToDbJson(e, props.image)
+        }
+        else if(isSaved === true) {
+            changeMessage('already Saved')
+        }
+    }
+
+    useEffect( () => { } )
+
     return(
-        props.images.map(image =>
-            <Card key={image.date}>
+        <Card >
         <Card.Content>
             <Card.Header textAlign="center">
-                {image.title}
+                {props.image.title}
             </Card.Header>
-            {description ? <p>{image.explanation}</p> : null}
-            <Image src={image.hdurl} />
+            {description ? <p>{props.image.explanation}</p> : null}
+
+            <Image src={props.image.hdurl} />
+            {message}
             <Button.Group>
-            <Button  onClick={(e) => saveImageToDbJson(e, image)}>
+            <Button  onClick={ () => markAsSaved() }>
                 Save Image
             </Button>
-            <Button  onClick={() => showDescription(description, toggleDescription)}>
+            <Button  onClick={ () => showDescription(description, toggleDescription) }>
                 Show Description
             </Button>
             </Button.Group >
         </Card.Content >
-    </Card> ) 
+    </Card>
     )
 }
-export default ImageCards
+export default ImageCard
