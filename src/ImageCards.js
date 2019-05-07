@@ -23,6 +23,9 @@ const saveImageToDbJson = (e, image) => {
 
 const showDescription = () => {
     console.log('showDescription():')
+    this.setState({
+        descriptionToggle: !this.state.descriptionToggle
+    })
 }
 
 const card = (image) => {
@@ -46,10 +49,10 @@ const card = (image) => {
     </Card> )
 }
 
+
 const ImageCards = (props) => {
     console.log(props.images)
     return(
         props.images.map(image => card(image)) )
 }
-
 export default ImageCards
