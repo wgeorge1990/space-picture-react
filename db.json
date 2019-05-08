@@ -369,23 +369,33 @@
       "title": "Opposite the Setting Sun",
       "url": "https://apod.nasa.gov/apod/image/1805/jupiter-and-moon-rising-Spencer1024.jpg",
       "id": 41
-    }
-  ],
-  "posts": [
+    },
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "date": "2018-05-01",
+      "explanation": "On the International Space Station (ISS), you can only admire an aurora until the sun rises. Then the background Earth becomes too bright.  Unfortunately, after sunset, the rapid orbit of the ISS around the Earth means that sunrise is usually less than  47 minutes away.  In the featured image, a green aurora is visible below the ISS -- and on the horizon to the upper right, while sunrise approaches ominously from the upper left.  Watching an aurora from space can be mesmerizing as its changing shape has been compared to a giant green amoeba.  Auroras are composed of energetic electrons and protons from the Sun that impact the Earth's magnetic field and then spiral down toward the Earth so fast that they cause atmospheric atoms and molecules to glow.  The ISS orbits at nearly the same height as auroras, many times flying right through an aurora's thin upper layers, an event that neither harms astronauts nor changes the shape of the aurora.    Share the Sky: NASA Open API for APOD",
+      "hdurl": "https://apod.nasa.gov/apod/image/1805/AuroraSunrise_ISS_5568.jpg",
+      "media_type": "image",
+      "title": "The Aurora and the Sunrise",
+      "url": "https://apod.nasa.gov/apod/image/1805/AuroraSunrise_ISS_960.jpg",
+      "id": 42
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "date": "2018-05-06",
+      "explanation": "Sometimes land and sky are both busy and beautiful. The landscape pictured in the foreground encompasses Bryce Canyon in Utah, USA, famous for its many interesting rock structures eroded over millions of years. The featured skyscape, photogenic in its own right, encompasses the arching central disk of our Milky Way Galaxy, the short streaks of three passing planes near the horizon, at least four long streaks that are likely Eta Aquariid meteors, and many stars including the three bright stars that make up the Summer Triangle. The featured image is a digital panorama created from 12 smaller images during this date in 2014. Recurring every year, yesterday and tonight mark the peak of this year's Eta Aquriids meteor shower, where a patient observer with dark skies and dark-adapted eyes might expect to see a meteor every few minutes.",
+      "hdurl": "https://apod.nasa.gov/apod/image/1805/meteorsbryce_lane_1800.jpg",
+      "media_type": "image",
+      "title": "Meteors, Planes, and a Galaxy over Bryce Canyon",
+      "url": "https://apod.nasa.gov/apod/image/1805/meteorsbryce_lane_960.jpg",
+      "id": 43
+    },
+    {
+      "date": "2018-05-05",
+      "explanation": "Stickney Crater, the largest crater on the martian moon Phobos, is named for Chloe Angeline Stickney Hall, mathematician and wife of astronomer Asaph Hall. Asaph Hall discovered both the Red Planet's moons in 1877. Over 9 kilometers across, Stickney is nearly half the diameter of Phobos itself, so large that the impact that blasted out the crater likely came close to shattering the tiny moon. This stunning, enhanced-color image of Stickney and surroundings was recorded by the HiRISE camera onboard the Mars Reconnaissance Orbiter as it passed within some six thousand kilometers of Phobos in March of 2008. Even though the surface gravity of asteroid-like Phobos is less than 1/1000th Earth's gravity, streaks suggest loose material slid down inside the crater walls over time. Light bluish regions near the crater's rim could indicate a relatively freshly exposed surface. The origin of the curious grooves along the surface is mysterious but may be related to the crater-forming impact.  Follow: Mars InSight Launch",
+      "hdurl": "https://apod.nasa.gov/apod/image/1805/PSP_007769_9010_IRB_Stickney.jpg",
+      "media_type": "image",
+      "title": "Stickney Crater",
+      "url": "https://apod.nasa.gov/apod/image/1805/PSP_007769_9010_IRB_Stickney1024.jpg",
+      "id": 44
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
