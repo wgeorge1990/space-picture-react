@@ -3,7 +3,7 @@ import { Card, Image, Button  } from 'semantic-ui-react'
 
 const saveImageToDbJson = (e, image) => {
     console.log("saveImageToDbJson():" )
-    fetch('http://localhost:3001/images', {
+    fetch('http://localhost:3000/images', {
                 method: 'POST',
                 headers : {
                     'Accept': 'application/json',
