@@ -23,9 +23,6 @@ const saveImageToDbJson = (e, image) => {
 
 const showDescription = () => {
     console.log('showDescription():')
-    this.setState({
-        descriptionToggle: !this.state.descriptionToggle
-    })
 }
 
 const card = (image) => {
