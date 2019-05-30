@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Card, Image, Button  } from 'semantic-ui-react'
 
 const saveImageToDbJson = (e, image) => {
@@ -42,9 +42,6 @@ const ImageCard = (props) => {
             changeMessage('already Saved')
         }
     }
-
-    useEffect( () => { } )
-
     return(
         <Card >
         <Card.Content>
@@ -56,10 +53,10 @@ const ImageCard = (props) => {
             <Image src={props.image.hdurl} />
             {message}
             <Button.Group>
-            <Button  onClick={ () => markAsSaved() }>
+            <Button  basic onClick={ () => markAsSaved() }>
                 Save Image
             </Button>
-            <Button  onClick={ () => showDescription(description, toggleDescription) }>
+            <Button  basic onClick={ () => showDescription(description, toggleDescription) }>
                 Show Description
             </Button>
             </Button.Group >

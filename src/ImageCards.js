@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Image, Button } from 'semantic-ui-react'
+import { Card, Image, Button, Divider } from 'semantic-ui-react'
 
 const saveImageToDbJson = (e, image) => {
     console.log("saveImageToDbJson():" )

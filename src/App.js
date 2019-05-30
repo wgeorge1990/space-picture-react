@@ -20,7 +20,7 @@ class App extends React.Component {
   fetchNasaImageTwoPointO() {
     let days = 29
     for(let i = 1; i < days; i++) {
-      if (i<=9 ) {
+      if (i <= 9) {
         let day = `0${i}`
         this.fetchDateFromNasa(day)
       } else {
@@ -33,7 +33,10 @@ class App extends React.Component {
         ////FETCH FROM NASA APOD API AND COPYING STATE INTO
   fetchDateFromNasa(day) {
     const apiKey = 'api_key=lGkMtTfySko0M2Ri7QvmcUUeBznG2ug9y7nft6vb'
-    let date = `2018-05-${day}`
+    let year = '2017'
+    let month = '09'
+    console.log(month)
+    let date = `${year}-${month}-${day}`
     let url = `https://api.nasa.gov/planetary/apod?date=${date}&${apiKey}`
     fetch(url)
     .then(resp => resp.json()).then(data => this.setState({
@@ -66,12 +69,11 @@ class App extends React.Component {
     }
   }
 
-  button = (text, funcCall) => ( <Button onClick={funcCall}>{text}</Button> )
+  button = (text, funcCall) => ( <Button basic onClick={funcCall}>{text}</Button> )
 
   render() {
     return(
       <div>
-        
         <Header  as='h1' textAlign="center">SpacePictures </Header>
         <Button.Group fluid>
           {this.button("Increase tiles", this.increaseTiles)}
