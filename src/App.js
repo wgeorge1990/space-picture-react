@@ -2,6 +2,7 @@ import React from 'react'
 import './App.css'
 import {Header, Button} from 'semantic-ui-react'
 import ImageContainer from './ImageContainer'
+import SpaceModal from './SpaceModal'
 
 
 class App extends React.Component {
@@ -80,10 +81,11 @@ class App extends React.Component {
           <Button.Or />
           {this.button("Decrease Tiles", this.decreaseTiles)}
         </Button.Group>
-            {this.state.nasaImages.length === 28 ? 
+            {/* {this.state.nasaImages.length === 28 ? 
             <ImageContainer 
                 images={this.state.nasaImages}
-                rowCount={this.state.rowCount} /> : null}
+                rowCount={this.state.rowCount} /> : null} */}
+        <SpaceModal/>
       </div>
     ) 
   }
