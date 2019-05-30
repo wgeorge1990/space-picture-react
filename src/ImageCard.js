@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Card, Image, Button  } from 'semantic-ui-react'
 
 const saveImageToDbJson = (e, image) => {

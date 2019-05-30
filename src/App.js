@@ -33,7 +33,7 @@ class App extends React.Component {
 
         ////FETCH FROM NASA APOD API AND COPYING STATE INTO
   fetchDateFromNasa(day) {
-    const apiKey = 'api_key=lGkMtTfySko0M2Ri7QvmcUUeBznG2ug9y7nft6vb'
+    const apiKey = 'api_key=bLG0z8HT7GsiY3CRB3RAKou2VLj7a4k0hf1Ggs8t'
     let year = '2017'
     let month = '09'
     console.log(month)
@@ -81,11 +81,11 @@ class App extends React.Component {
           <Button.Or />
           {this.button("Decrease Tiles", this.decreaseTiles)}
         </Button.Group>
-            {/* {this.state.nasaImages.length === 28 ? 
+             <SpaceModal/>
+            {this.state.nasaImages.length === 28 ? 
             <ImageContainer 
                 images={this.state.nasaImages}
-                rowCount={this.state.rowCount} /> : null} */}
-        <SpaceModal/>
+                rowCount={this.state.rowCount} /> : null}
       </div>
     ) 
   }
