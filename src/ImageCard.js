@@ -48,10 +48,11 @@ const ImageCard = (props) => {
             <Card.Header textAlign="center">
                 {props.image.title}
             </Card.Header>
-            {description ? <p>{props.image.explanation}</p> : null}
-
             <Image src={props.image.hdurl} />
-            {message}
+                {message}
+                {description ? <h2>Description:</h2> : null}
+                <h3>{description ?
+                    <p>{props.image.explanation}</p> : null}</h3>
             <Button.Group>
             <Button  basic onClick={ () => markAsSaved() }>
                 Save Image
