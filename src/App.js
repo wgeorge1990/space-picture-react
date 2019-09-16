@@ -1,24 +1,28 @@
 import React from 'react'
 import './App.css'
-import { Header, Button, Form, Dropdown } from 'semantic-ui-react'
+import { Header, Button, Form, Dropdown, Container } from 'semantic-ui-react'
 import ImageContainer from './ImageContainer'
-
 
 class App extends React.Component {
   state = {
     nasaImages: [],
-    rowCount: 3
-
+    newSearchCollection: [],
+    rowCount: 3,
+    month: "01",
+    year: "2015",
   }
+
   /////FIRST WAY
   fetchNasaImageForEachDayOfMonth() {
     let dayList = ["01", "02", "03", "04", "05", "06", "07", "08", '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20']
     dayList.forEach(day => this.fetchDateFromNasa(day))
   }
 
+
+
   /////BETTER WAY
   fetchNasaImageTwoPointO() {
-    let days = 29
+    let days = 10
     for (let i = 1; i < days; i++) {
       if (i <= 9) {
         let day = `0${i}`
@@ -28,13 +32,16 @@ class App extends React.Component {
         this.fetchDateFromNasa(day)
       }
     }
+
   }
 
   ////FETCH FROM NASA APOD API AND COPYING STATE INTO
   fetchDateFromNasa(day) {
     const apiKey = 'api_key=lGkMtTfySko0M2Ri7QvmcUUeBznG2ug9y7nft6vb'
-    let year = '2017'
-    let month = '09'
+    // let year = '2017'
+    let year = this.state.year
+    // let month = '09'
+    let month = this.state.month
     console.log(month)
     let date = `${year}-${month}-${day}`
     let url = `https://api.nasa.gov/planetary/apod?date=${date}&${apiKey}`
@@ -46,7 +53,7 @@ class App extends React.Component {
   ////ON COMPONENT MOUNT
   componentDidMount() {
     //this.fetchNasaImageForEachDayOfMonth()
-    // this.fetchNasaImageTwoPointO()
+     this.fetchNasaImageTwoPointO()
   }
 
   //    saveImageToDbJson = () => {
@@ -71,16 +78,26 @@ class App extends React.Component {
 
   button = (text, funcCall) => (<Button basic onClick={funcCall}>{text}</Button>)
 
-  handleMonthChange = (e) => {
-    console.log(e)
+  handleMonthChange = (e, data) => {
+    console.log(data.value)
+    this.setState({
+      month: data.value,
+      nasaImages: []
+    })
+    this.fetchNasaImageTwoPointO()
   }
-  handleYearChange = (e) => {
-    console.log(e)
+  handleYearChange = (e, data) => {
+    console.log(data.value)
+    this.setState({
+      year: data.value,
+      nasaImages: []
+    })
+    this.fetchNasaImageTwoPointO()
   }
 
   monthOptions = [
-    { key: 1, text: 'Jan', value: '01' },
-    { key: 2, text: 'Feb', value: '02' },
+    { key: 1, text: 'January', value: '01' },
+    { key: 2, text: 'February ', value: '02' },
     { key: 3, text: 'March', value: '03' },
     { key: 4, text: 'April', value: '04' },
     { key: 5, text: 'May', value: '05' },
@@ -129,27 +146,30 @@ class App extends React.Component {
     return (
       <div>
         <Header as='h1' textAlign="center">SpacePictures </Header>
-        <Form onSubmit={this.submitForm}>
+        <Container textAlign='center'>
+        <Form onSubmit={this.submitForm}  >
           <Dropdown
+            name='month'
             clearable
             options={this.monthOptions}
             selection
             onChange={this.handleMonthChange}
             placeholder="Month" />
           <Dropdown
+            name='year'
             clearable
             options={this.yearOptions}
             selection
             onChange={this.handleYearChange}
             placeholder="Year" />
         </Form>
-
+</Container>
         <Button.Group fluid>
-          {this.button("Increase tiles", this.increaseTiles)}
+          <Button onClick={this.increaseTiles}>Increase Tiles</Button>
           <Button.Or />
-          {this.button("Decrease Tiles", this.decreaseTiles)}
+          <Button onClick={this.decreaseTiles}>Decrease Tiles</Button>
         </Button.Group>
-        {this.state.nasaImages.length === 28 ?
+        {this.state.nasaImages ?
           <ImageContainer
             images={this.state.nasaImages}
             rowCount={this.state.rowCount} /> : null}
